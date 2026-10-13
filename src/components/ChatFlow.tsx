@@ -3,6 +3,7 @@ import { answerOption, answerText, startFlow, type ChatState } from '../lib/engi
 import { FLOWS } from '../lib/flows';
 import type { EntryPoint, FlowData } from '../lib/types';
 import { ContactCards, PhoneList, SubmissionSummary } from './Panels';
+import { ArrowRight } from './Icons';
 
 interface Props {
   entry: EntryPoint;
@@ -85,8 +86,8 @@ export function ChatFlow({ entry, baseData, onState }: Props) {
             placeholder="Type your answer"
             aria-label="Your answer"
           />
-          <button type="submit" className="send" disabled={!draft.trim()}>
-            Send
+          <button type="submit" className="send" disabled={!draft.trim()} aria-label="Send">
+            <ArrowRight size={20} />
           </button>
         </form>
       )}

@@ -3,6 +3,7 @@ import { PRODUCT_NAME } from '../lib/data';
 import type { ChatState } from '../lib/engine';
 import type { User } from '../lib/types';
 import { ContactSection } from './ContactPage';
+import { BubblesArt } from './BubblesArt';
 
 export function ProductPage({
   region,
@@ -15,8 +16,11 @@ export function ProductPage({
 }) {
   return (
     <div className="page">
+      <div className="hero-art">
+        <BubblesArt seed={21} />
+      </div>
       <section className="hero">
-        <p className="eyebrow">Automation and control</p>
+        <span className="tag-pill">Automation and control</span>
         <h1>{PRODUCT_NAME} Standard</h1>
         <p className="lede">
           A compact controller for mid-size production lines. This is a placeholder product page. It exists to show the

@@ -7,6 +7,7 @@ import { ProductPage } from './components/ProductPage';
 import { FlowMap } from './components/FlowMap';
 import { RoutingTreemap } from './components/RoutingTreemap';
 import { UnderTheHood } from './components/UnderTheHood';
+import { ArrowUpRight } from './components/Icons';
 
 type Tab = 'contact' | 'product' | 'flowmap' | 'treemap';
 
@@ -50,7 +51,9 @@ export function App() {
   return (
     <div className="app">
       <header className="site-header">
-        <div className="brand">HALDEN</div>
+        <div className="brand">
+          lumi labs<span className="brand-mark" aria-hidden="true" />
+        </div>
         <nav aria-label="Prototype sections">
           {TABS.map((t) => (
             <button
@@ -74,6 +77,7 @@ export function App() {
           </label>
           <button className="login" onClick={toggleLogin}>
             {user ? user.name : 'Log in'}
+            <ArrowUpRight size={18} />
           </button>
         </div>
       </header>

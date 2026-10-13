@@ -64,7 +64,7 @@ describe('conversation engine', () => {
   it('product page entry skips the product question', () => {
     const s = startFlow(entry('pdp_purchase'), base);
     expect(s.stepId).toBe('purchase_options');
-    expect(s.data.productName).toBe('Halden Controller X2');
+    expect(s.data.productName).toBe('Lumi Labs Controller X2');
   });
 
   it('auto steps advance on their own', () => {

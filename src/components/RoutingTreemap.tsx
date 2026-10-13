@@ -8,16 +8,17 @@ const W = 960;
 const H = 460;
 const PAD = 3;
 
-const HUES: Record<MarketGroup, number> = {
-  Europe: 210,
-  'North America': 160,
-  'Latin America': 35,
-  'Asia Pacific': 280,
-  'Middle East and Africa': 340,
-  Unknown: 0
+// Colour combination 188: one colour per request type, label colours chosen for contrast.
+const FLOW_COLORS: Record<string, { fill: string; label: string }> = {
+  support: { fill: '#5a6232', label: '#ffffff' },
+  purchase: { fill: '#9089af', label: '#1d2029' },
+  info: { fill: '#8ebf8a', label: '#2c3117' }
 };
+const FALLBACK_COLOR = { fill: '#c9ccd3', label: '#1d2029' };
 
-const FLOW_LIGHTNESS: Record<string, number> = { support: 44, purchase: 56, info: 68 };
+const TEAM_FILL = '#f2f4f7';
+const TRIAGE_FILL = '#eeedf3';
+const isTriage = (g: MarketGroup) => g === 'Unknown';
 
 export function RoutingTreemap() {
   const [count, setCount] = useState(600);
@@ -104,7 +105,7 @@ export function RoutingTreemap() {
 
       <svg viewBox={`0 0 ${W} ${H}`} className="treemap" role="img" aria-label="Treemap of requests by team and type">
         {layout.map(({ outer, group, inner }) => {
-          const hue = HUES[group];
+          const triage = isTriage(group);
           const isHover = hover === outer.key;
           return (
             <g key={outer.key} onMouseEnter={() => setHover(outer.key)} onMouseLeave={() => setHover(null)}>
@@ -113,48 +114,67 @@ export function RoutingTreemap() {
                 y={outer.y}
                 width={outer.w}
                 height={outer.h}
-                fill={`hsl(${hue} 25% 94%)`}
+                fill={triage ? TRIAGE_FILL : TEAM_FILL}
                 stroke="#fff"
                 strokeWidth={2}
               />
+              {triage && (
+                <rect
+                  x={outer.x + 2}
+                  y={outer.y + 2}
+                  width={Math.max(outer.w - 4, 0)}
+                  height={Math.max(outer.h - 4, 0)}
+                  fill="none"
+                  stroke="#5a6232"
+                  strokeDasharray="4 3"
+                />
+              )}
               {outer.w > 90 && outer.h > 30 && (
                 <text x={outer.x + 6} y={outer.y + 13} className="tm-team">
                   {outer.key} ({outer.value})
                 </text>
               )}
-              {inner.map((r) => (
-                <g key={r.key}>
-                  <rect
-                    x={r.x}
-                    y={r.y}
-                    width={Math.max(r.w - 1, 0)}
-                    height={Math.max(r.h - 1, 0)}
-                    fill={`hsl(${hue} 45% ${FLOW_LIGHTNESS[r.key] ?? 60}%)`}
-                    opacity={hover && !isHover ? 0.45 : 1}
-                  >
-                    <title>
-                      {outer.key}: {FLOW_LABELS[r.key] ?? r.key}, {r.value} requests
-                    </title>
-                  </rect>
-                  {r.w > 70 && r.h > 22 && (
-                    <text x={r.x + 5} y={r.y + 14} className="tm-label">
-                      {FLOW_LABELS[r.key] ?? r.key}: {r.value}
-                    </text>
-                  )}
-                </g>
-              ))}
+              {inner.map((r) => {
+                const color = FLOW_COLORS[r.key] ?? FALLBACK_COLOR;
+                return (
+                  <g key={r.key}>
+                    <rect
+                      x={r.x}
+                      y={r.y}
+                      width={Math.max(r.w - 1, 0)}
+                      height={Math.max(r.h - 1, 0)}
+                      rx={4}
+                      fill={color.fill}
+                      opacity={hover && !isHover ? 0.45 : 1}
+                    >
+                      <title>
+                        {outer.key}: {FLOW_LABELS[r.key] ?? r.key}, {r.value} requests
+                      </title>
+                    </rect>
+                    {r.w > 70 && r.h > 22 && (
+                      <text x={r.x + 6} y={r.y + 15} className="tm-label" fill={color.label}>
+                        {FLOW_LABELS[r.key] ?? r.key}: {r.value}
+                      </text>
+                    )}
+                  </g>
+                );
+              })}
             </g>
           );
         })}
       </svg>
 
       <div className="legend">
-        {(Object.keys(HUES) as MarketGroup[]).map((g) => (
-          <span key={g} className="legend-item">
-            <i style={{ background: `hsl(${HUES[g]} 45% 56%)` }} />
-            {g === 'Unknown' ? 'Country not recognised (triage)' : g}
+        {Object.entries(FLOW_COLORS).map(([key, c]) => (
+          <span key={key} className="legend-item">
+            <i style={{ background: c.fill }} />
+            {FLOW_LABELS[key] ?? key}
           </span>
         ))}
+        <span className="legend-item">
+          <i className="legend-triage" />
+          Country not recognised (triage)
+        </span>
       </div>
 
       <p className="muted small">
