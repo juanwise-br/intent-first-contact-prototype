@@ -1,10 +1,14 @@
 # Lumi Labs Contact Prototype
 
+[![Test and deploy](https://github.com/juanwise-br/lumi-labs-contact-prototype/actions/workflows/deploy.yml/badge.svg)](https://github.com/juanwise-br/lumi-labs-contact-prototype/actions/workflows/deploy.yml)
+
+**[Open the live demo →](https://juanwise-br.github.io/lumi-labs-contact-prototype/)**
+
 An intent-first contact experience, built as a working prototype. A visitor tells a conversational form what they need, the form asks only what is relevant, and a routing engine sends the request to the right team with the right context. Nothing gets lost.
 
 Lumi Labs is a fictional industrial company and all data is mock. The point is the product thinking, and the code that proves it works.
 
-**Try it:** `npm install` then `npm run dev`
+**Run it locally:** `npm install` then `npm run dev`
 
 ## What you can do in it
 
