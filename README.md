@@ -1,4 +1,4 @@
-# Lumi Labs Contact Prototype
+# Intent-First Contact Prototype
 
 [![Test and deploy](https://github.com/juanwise-br/lumi-labs-contact-prototype/actions/workflows/deploy.yml/badge.svg)](https://github.com/juanwise-br/lumi-labs-contact-prototype/actions/workflows/deploy.yml)
 
@@ -6,7 +6,7 @@
 
 An intent-first contact experience, built as a working prototype. A visitor tells a conversational form what they need, the form asks only what is relevant, and a routing engine sends the request to the right team with the right context. Nothing gets lost.
 
-Lumi Labs is a fictional industrial company and all data is mock. The point is the product thinking, and the code that proves it works.
+This prototype comes from a real problem: generic contact forms sent inquiries to a central team for manual routing, and some never reached the right team. This repo is a rebuilt public version. It uses a fictional company, mock data, and generated test scenarios, and contains no customer records or employer information. The point is the product thinking, and the code that proves it works.
 
 **Run it locally:** `npm install` then `npm run dev`
 
@@ -88,4 +88,4 @@ It is a prototype, so some things are deliberately simple:
 
 ## How I built it
 
-I designed the original concept and iterated on it with an AI prototyping tool, then rebuilt it here from scratch as a clean, tested codebase using Claude. The routing logic, the treemap, the flow map, and the tests were added in the rebuild. I use AI to move fast, and I keep the decisions, the requirements, and the review for myself.
+I designed the concept and iterated on it with an AI prototyping tool, then rebuilt it here from scratch as a clean, tested codebase using Claude Code and Claude. The routing logic, the treemap, the flow map, and the tests were added in the rebuild. I use AI to move fast, and I keep the decisions, the requirements, and the review for myself.
