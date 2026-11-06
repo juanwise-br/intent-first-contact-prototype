@@ -45,7 +45,7 @@ describe('flow config integrity', () => {
   });
 
   it('copy never uses long dashes', () => {
-    const sample = { productName: 'X', productFamily: 'Y', region: 'Z', ref: 'R', userEmail: 'e@x.co', callbackDay: 'Monday', callbackHour: '09:00' };
+    const sample = { productName: 'X', productFamily: 'Y', region: 'Z', ref: 'R', userEmail: 'e@example.com', callbackDay: 'Monday', callbackHour: '09:00' };
     for (const step of Object.values(FLOWS)) {
       const text = [resolveMessage(step, sample), step.footnote ?? '', ...(step.options ?? []).map((o) => o.label)].join(' ');
       expect(text, step.id).not.toMatch(/[\u2013\u2014]/);

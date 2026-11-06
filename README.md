@@ -52,22 +52,22 @@ React, TypeScript, and Vite. No UI libraries and no charting libraries. The tree
 
 - **Flow integrity.** Every next step exists, every step has what it needs, nothing is unreachable.
 - **Engine behaviour.** Full flows end to end, invalid email handling, skipping known details, product page entry, auto advancing steps, start over.
-- **Routing.** Regional match, global fallback, triage fallback, priority lane, callback queue, and 2,000+ generated scenarios with zero unrouted.
+- **Routing.** Regional match, global fallback, triage fallback, priority lane, callback queue, and 2,000 generated scenarios with zero unrouted.
 - **Treemap layout.** Fills the area, stays in bounds, sizes in proportion.
 
 ## What it maps to in the requirements
 
-This prototype demonstrates requirements from the contact section (RC3) of the sample BRD in my portfolio repo:
+This prototype is built to demonstrate these product requirements:
 
 | Requirement | Where it shows up |
 |---|---|
-| 3.1 Intake adapts to the active region | Region drives confirmation, phone numbers, routing |
-| 3.3, 3.3b Capture intent first, show only relevant fields | Intent steps come first, fields follow the intent |
-| 3.4a Plain language summary before submitting | Review step with consent copy |
-| 3.5, 3.9 Automatic routing with qualification by intent | `routing.ts` |
-| 3.7, 3.10 Confirmation and traceability | Reference number on every submission |
-| 3.9a, 3.11 No interaction lost, fallback for every market | Three level fallback chain |
-| 3.14a Callback with preferred window | Day and time steps |
+| Intake adapts to the active region | Region drives confirmation, phone numbers, routing |
+| Capture intent first, show only relevant fields | Intent steps come first, fields follow the intent |
+| Plain language summary before submitting | Review step with consent copy |
+| Automatic routing with qualification by intent | `routing.ts` |
+| Confirmation and traceability | Reference number on every submission |
+| No interaction lost, fallback for every market | Three level fallback chain |
+| Callback with preferred window | Day and time steps |
 
 ## What I would measure
 
