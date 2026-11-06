@@ -61,12 +61,12 @@ export interface Contact {
 /** All names are fictional. */
 export const CONTACTS: Contact[] = [
   { name: 'Lena Hartmann', title: 'Regional Sales Lead', role: 'Sales', area: 'Automation and control', group: 'Europe', city: 'Munich' },
-  { name: 'Mateo Ruiz', title: 'Key Account Manager', role: 'Sales', area: 'Drives and motion', group: 'Europe', city: 'Madrid' },
+  { name: 'Tomas Verhoeven', title: 'Key Account Manager', role: 'Sales', area: 'Drives and motion', group: 'Europe', city: 'Madrid' },
   { name: 'Sofia Laurent', title: 'Solutions Sales', role: 'Sales', area: 'Software and data', group: 'Europe', city: 'Lyon' },
   { name: 'Dana Whitfield', title: 'Regional Sales Lead', role: 'Sales', area: 'Automation and control', group: 'North America', city: 'Chicago' },
   { name: 'Marcus Bell', title: 'Technical Support Engineer', role: 'Technical support', area: 'Drives and motion', group: 'North America', city: 'Austin' },
   { name: 'Ana Beltran', title: 'Distributor Manager', role: 'Distributor', area: 'Energy and power', group: 'Latin America', city: 'Bogota' },
-  { name: 'Rafael Costa', title: 'Sales Engineer', role: 'Sales', area: 'Buildings', group: 'Latin America', city: 'Sao Paulo' },
+  { name: 'Ilse Brandt', title: 'Sales Engineer', role: 'Sales', area: 'Buildings', group: 'Latin America', city: 'Sao Paulo' },
   { name: 'Priya Raman', title: 'Technical Support Lead', role: 'Technical support', area: 'Automation and control', group: 'Asia Pacific', city: 'Pune' },
   { name: 'Kenji Mori', title: 'Solution Partner Manager', role: 'Solution partner', area: 'Software and data', group: 'Asia Pacific', city: 'Osaka' },
   { name: 'Wei Tan', title: 'Training Coordinator', role: 'Training', area: 'Services', group: 'Asia Pacific', city: 'Singapore' },
