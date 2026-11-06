@@ -1,6 +1,6 @@
 import type { MarketGroup } from './routing';
 
-export const PRODUCT_NAME = 'Lumi Labs Controller X2';
+export const PRODUCT_NAME = 'Northwind Industrial Controller X2';
 
 export const DEAL_LABELS: Record<string, string> = {
   small: 'Under 10,000 USD',
@@ -77,7 +77,7 @@ export const CONTACTS: Contact[] = [
 ];
 
 export const GLOBAL_DESK: Contact = {
-  name: 'Lumi Labs Global Contact Desk',
+  name: 'Northwind Industrial Global Contact Desk',
   title: 'We will find the right person for you',
   role: 'Any',
   area: 'Any',
@@ -119,6 +119,6 @@ export const OTHER_CATEGORIES: { title: string; items: string[] }[] = [
   },
   {
     title: 'General inquiries',
-    items: ['Careers at Lumi Labs', 'Consumer products', 'Whistleblowing and reporting channels']
+    items: ['Careers at Northwind Industrial', 'Consumer products', 'Whistleblowing and reporting channels']
   }
 ];

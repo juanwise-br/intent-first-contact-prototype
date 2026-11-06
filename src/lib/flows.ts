@@ -16,7 +16,7 @@ const methodOptions: Option[] = [
 ];
 
 const consent =
-  'By submitting this request you agree that Lumi Labs may process your data to respond to it, and may send you related product news. You can opt out at any time.';
+  'By submitting this request you agree that Northwind Industrial may process your data to respond to it, and may send you related product news. You can opt out at any time.';
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const hours = Array.from({ length: 9 }, (_, i) => `${String(i + 9).padStart(2, '0')}:00`);
@@ -31,7 +31,7 @@ const steps: FlowStep[] = [
       { label: 'I need information about products or services', nextId: 'info' },
       { label: 'I want to buy a product or get a quote', nextId: 'purchase' },
       { label: 'I need support for a product I own', nextId: 'support' },
-      { label: 'I want to find a Lumi Labs representative or partner', nextId: 'representative' },
+      { label: 'I want to find a Northwind Industrial representative or partner', nextId: 'representative' },
       { label: 'I have a different request', nextId: 'default_view' }
     ]
   },
@@ -420,7 +420,7 @@ export const GLOBAL_ENTRIES: EntryPoint[] = [
   { key: 'support', label: 'I need support for a product I own', flow: 'support', startStepId: 'support' },
   {
     key: 'representative',
-    label: 'I want to find a Lumi Labs representative or partner',
+    label: 'I want to find a Northwind Industrial representative or partner',
     flow: 'representative',
     startStepId: 'representative'
   }

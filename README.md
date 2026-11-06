@@ -1,8 +1,8 @@
 # Intent-First Contact Prototype
 
-[![Test and deploy](https://github.com/juanwise-br/lumi-labs-contact-prototype/actions/workflows/deploy.yml/badge.svg)](https://github.com/juanwise-br/lumi-labs-contact-prototype/actions/workflows/deploy.yml)
+[![Test and deploy](https://github.com/juanwise-br/intent-first-contact-prototype/actions/workflows/deploy.yml/badge.svg)](https://github.com/juanwise-br/intent-first-contact-prototype/actions/workflows/deploy.yml)
 
-**[Open the live demo →](https://juanwise-br.github.io/lumi-labs-contact-prototype/)**
+**[Open the live demo →](https://juanwise-br.github.io/intent-first-contact-prototype/)**
 
 An intent-first contact experience, built as a working prototype. A visitor tells a conversational form what they need, the form asks only what is relevant, and a routing engine sends the request to the right team with the right context. Nothing gets lost.
 
@@ -52,7 +52,7 @@ React, TypeScript, and Vite. No UI libraries and no charting libraries. The tree
 
 - **Flow integrity.** Every next step exists, every step has what it needs, nothing is unreachable.
 - **Engine behaviour.** Full flows end to end, invalid email handling, skipping known details, product page entry, auto advancing steps, start over.
-- **Routing.** Regional match, global fallback, triage fallback, priority lane, callback queue, and 2,000 simulated requests with zero unrouted.
+- **Routing.** Regional match, global fallback, triage fallback, priority lane, callback queue, and 2,000+ generated scenarios with zero unrouted.
 - **Treemap layout.** Fills the area, stays in bounds, sizes in proportion.
 
 ## What it maps to in the requirements

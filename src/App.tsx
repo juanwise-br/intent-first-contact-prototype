@@ -52,7 +52,7 @@ export function App() {
     <div className="app">
       <header className="site-header">
         <div className="brand">
-          lumi labs<span className="brand-mark" aria-hidden="true" />
+          northwind<span className="brand-mark" aria-hidden="true" />
         </div>
         <nav aria-label="Prototype sections">
           {TABS.map((t) => (
